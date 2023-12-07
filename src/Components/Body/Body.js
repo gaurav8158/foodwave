@@ -26,12 +26,15 @@ const Body = () => {
       const data = await fetch(SWIGGY_API_URL);
       const json = await data.json();
       // Optional Chaining ?
+      console.log( json?.data);
       setAllRestaurants(
         json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setFilteredRestaurants(
         json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
     } catch (error) {
@@ -39,7 +42,7 @@ const Body = () => {
     }
   };
 
-  console.log(searchInput);
+ // console.log(searchInput);
   console.log(allRestaurants, filteredRestaurants);
 
   // if (filteredRestaurants==undefined || filteredRestaurants?.length === 0)
