@@ -1,0 +1,34 @@
+/* .itemcard{
+    margin: 0px;
+    padding: opx;
+display: flex;
+justify-content: space-between;
+padding:2rem;
+font-weight: 300;
+    color: #282c3f;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+}
+.itemcard-left{
+display: flex;
+flex-direction: column;
+max-width: calc(100% - 144px);
+}
+.itemcard-right{
+    position: relative;
+    margin-left: 16px;
+    min-width: 118px;
+    height: 120px;
+    font-size: 0;
+    box-sizing: inherit;
+}
+.food-img{
+        width: 118px;
+        height: 96px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 6px;
+}
+.menu-list{
+margin: auto;
+
+} */
