@@ -41,10 +41,17 @@ class Profile extends React.Component {
 
         <p className="text-xl font-bold text-slate-800">{this.state.userInfo?.name}</p>
         <p className="font-serif text-slate-600 text-sm mb-2">{this.state.userInfo?.bio}</p>
-        <div className="flex justify-center mb-2 ">
-          <Link to="https://twitter.com/Gauravs14241133"><FaTwitter className="text-blue-600 m-1" /></Link>
-          <Link to="https://github.com/gaurav8158"><FaGithub className="m-1" /></Link>
-          <Link to="https://www.linkedin.com/in/gauravsonis/"><FaLinkedin className="text-blue-600 m-1" /></Link>
+        <div className="flex justify-center mb-2 gap-2">
+         <div className="p-2  rounded-full transition-all bg-pink-500 hover:bg-pink-700"> <Link to="https://twitter.com/Gauravs14241133"><FaTwitter className="text-blue-600 m-1 hover:scale-110" /></Link>
+          </div>
+          <div className="p-2  rounded-full bg-white hover:bg-zinc-500 ">
+          <Link to="https://github.com/gaurav8158"><FaGithub className="m-1 hover:scale-110" /></Link>
+        
+          </div>
+          <div className="p-2  rounded-full bg-pink-500 hover:bg-pink-700">
+          <Link to="https://www.linkedin.com/in/gauravsonis/"><FaLinkedin className="text-blue-600 m-1 hover:scale-110" /></Link>
+       
+          </div>
         </div>
       </div>
     );

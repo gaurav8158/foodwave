@@ -38,11 +38,11 @@ const Header = () => {
   return (
 
     <div className="font-medium text-xl " >
-      <div className="md:flex md:justify-between md:items-center shadow p-5">
+      <div className="md:flex md:justify-between md:items-center shadow py-2 px-4">
         <div className="flex justify-between items-center">
           <Link to="/">
-            <div className="h-16">
-              <img src={logo} className="h-full" />
+            <div>
+              <img src={logo} className="w-14" />
             </div>
           </Link>
           <span className="cursor-pointer md:hidden block mx-2 text-3xl">
