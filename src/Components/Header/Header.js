@@ -14,8 +14,8 @@ const Header = () => {
   const isLogin = useSelector((state) => state.user.isLogin)
   const currUser = useSelector((state) => state.user.activeUser)
   const item = useSelector((state) => state.cart.items);
-  console.log(item, "items")
-  console.log(isLogin, currUser)
+  // console.log(item, "items")
+  // console.log(isLogin, currUser)
   const[sum,setSum]=useState(0);
   const isOnline = useOnline();
   useEffect(()=>{
@@ -23,7 +23,7 @@ const Header = () => {
   setSum(sum);
   })
   
-  console.log(item);
+  //console.log(item);
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("isLogin"))) {
       setUser(currUser);
@@ -33,11 +33,11 @@ const Header = () => {
     )
   }, [dispatch, isLogin, currUser]); // Add localStorage.getItem("activeUser") as a dependency
   const [menu, setMenu] = useState(true);
-  console.log(user)
+  //console.log(user)
   const handleLogout = () => {
     dispatch(setLogout())
   }
-  console.log(isOnline);
+  //console.log(isOnline);
   return (
 
     <div className="font-medium " >

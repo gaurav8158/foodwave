@@ -9,12 +9,12 @@ const Checkout = () => {
  const isLogin = useSelector((state) => state.user.isLogin)
   return (
    
-    <div className="min-h-screen  bg-yellow-800">
+    <div className="min-h-screen">
 
 
    {isLogin ? 
-   <div className="bg-white p-8 rounded shadow-md min-h-screen  flex justify-between">
-    <div className='flex flex-col justify-center'>
+   <div className="bg-slate-200 p-8 rounded shadow-md min-h-screen  flex justify-between">
+    <div className='flex flex-col justify-center max-w-[250px] w-full'>
       <h2 className="text-3xl font-semibold mb-6">Order Status</h2>
 
       <div className="mb-4">
@@ -39,7 +39,7 @@ const Checkout = () => {
 
     
     </div> :  
-       <div className="bg-white p-8 rounded shadow-md max-w-md">
+       <div className="bg-white p-8  rounded shadow-md max-w-md">
      <h2 className="text-3xl font-semibold mb-6">Login to checkout...</h2>
      <button onClick={()=>navigate("/")} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
           Login

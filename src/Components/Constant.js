@@ -101,6 +101,62 @@ const items=
     price:"68200",
     description:"MRP 772. Save Rs 90 | 2 Veg Whopper + 1 King Fries + 1 Chocolate Shake + 1 Medium Soft Drink (Cola)",
   },
+  {
+    id:2013,
+    name:"Medium Fries",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/uttwq3j7gos3thsaposd",
+    price:11500,
+    description:"The Perfect Crispy Partner",
+  },
+  {
+    id:2014,
+    name:"Chocolate Thick Shake",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iixakii4wvkq3dgmpsvc",
+    price:"18900",
+    description:"Our Signature Chocolate Thick Shake",
+  },
+  {
+    id:2015,
+    name:"Whopper Duo - Veg",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7727ff37bf9563f969427289b882db42",
+    price:"68200",
+    description:"MRP 772. Save Rs 90 | 2 Veg Whopper + 1 King Fries + 1 Chocolate Shake + 1 Medium Soft Drink (Cola)",
+  },
+  {
+    id:2016,
+    name:"Whopper Duo - Veg",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7727ff37bf9563f969427289b882db42",
+    price:"68200",
+    description:"MRP 772. Save Rs 90 | 2 Veg Whopper + 1 King Fries + 1 Chocolate Shake + 1 Medium Soft Drink (Cola)",
+  },
+  {
+    id:2017,
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7798d7bed74c81bc0e5ffc677a7d2eef",
+    name:"Crispy Veg Burger+Fries(M)",
+    price:16000,
+    description:"Our Best-Selling Burger With Crispy Veg Patty, Fresh Onion And Our Signature Sauce",
+  },
+  {
+    id:2018,
+    name:"Medium Fries",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/uttwq3j7gos3thsaposd",
+    price:11500,
+    description:"The Perfect Crispy Partner",
+  },
+  {
+    id:2019,
+    name:"Chocolate Thick Shake",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/iixakii4wvkq3dgmpsvc",
+    price:"18900",
+    description:"Our Signature Chocolate Thick Shake",
+  },
+  {
+    id:2020,
+    name:"Whopper Duo - Veg",
+    image:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7727ff37bf9563f969427289b882db42",
+    price:"68200",
+    description:"MRP 772. Save Rs 90 | 2 Veg Whopper + 1 King Fries + 1 Chocolate Shake + 1 Medium Soft Drink (Cola)",
+  },
 ]
 
 export const Restaurents = [

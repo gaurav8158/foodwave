@@ -14,7 +14,7 @@ const Itemcard = ({ item }) => {
       if (data.item?.id == item?.id) {
         setCartCount(data.count)
       }
-      
+
     })
   })
 
@@ -25,25 +25,25 @@ const Itemcard = ({ item }) => {
 
   const handleDecrement = (item) => {
     dispatch(removeFromCart({ "item": item, "count": cartCount - 1 }))
-   if(cartCount ==1){
-    setCartCount((cartCount) => cartCount - 1)
-   }
+    if (cartCount == 1) {
+      setCartCount((cartCount) => cartCount - 1)
+    }
   }
 
   return (
-    <div key={item.id} className="flex justify-between my-2 py-10 px-2 shadow-md 
+    <div key={item.id} className="flex justify-between py-8 px-4 shadow-md 
     ">
       <div className="flex flex-col w-1/2 sm:w-3/4 justify-between">
-       <div>
-       <p className="font-bold font-sans">{item.name}</p>
-        </div> 
-        {item.price==undefined ?
-        <p className="text-sm font-bold font-sans">Rs. 100.00</p>
-        : <p className="text-sm font-bold font-sans">Rs. {`${item.price / 100}.00`}</p>
+        <div>
+          <p className="font-bold font-sans">{item.name}</p>
+        </div>
+        {item.price == undefined ?
+          <p className="text-sm font-bold font-sans">Rs. 100.00</p>
+          : <p className="text-sm font-bold font-sans">Rs. {`${item.price / 100}.00`}</p>
         }
 
         <p className="text-gray-400 text-xs font-sans">{item.description}</p>
-        
+
       </div>
       <div className=" flex flex-col justify-center items-center relative">
         <img className="w-[100px] rounded-xl shadow-xl relative " alt="item" src={item.image} />

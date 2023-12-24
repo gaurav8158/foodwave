@@ -27,12 +27,28 @@ const Offers = () => {
     }
   };
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // This is the breakpoint for tablet devices
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 400, // This is the breakpoint for mobile devices
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  
   };
+
+
   return (
     <div className="w-full m-auto">
       <div className='flex justify-end'>
@@ -45,13 +61,16 @@ const Offers = () => {
 
 
       </div>
-      <Slider ref={sliderRef} {...settings}>
+      <Slider ref={sliderRef}
+      
+      {...settings}>
 
         {imgArr.map((data) => {
           return (<div key={data} className='p-2'><img src={data} alt="img" /></div>)
         })}
 
       </Slider>
+      {``}
     </div>
   )
 }

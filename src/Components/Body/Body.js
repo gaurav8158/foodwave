@@ -47,7 +47,7 @@ const Body = () => {
     return <h1>Hey,You are offline</h1>;
   }
   const filteredRestaurent = Restaurents.filter((restaurant) => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()))
-  console.log(filteredRestaurent)
+  //console.log(filteredRestaurent)
   return (
     <>
       <div className="flex w-11/12 justify-center max-w-screen-xl mx-auto mt-5 mb-2">
