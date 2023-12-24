@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
 import "./Body.css";
 import Shimmer from "./Shimmer";
-import { SWIGGY_API_URL } from "../Constant";
+import { Restaurents, SWIGGY_API_URL } from "../Constant";
 import { Link } from "react-router-dom";
 import { filteredData } from "../Utils/helper";
 import useOnline from "../useOnline";
 import { FaSearch } from "react-icons/fa";
-import { ShimmerCard } from "react-shimmer-effects";
-import ShimmerRes from "../Shimmer/ShimmerRes";
-import Shimmerrestaurent from "../Shimmer/Shimmerrestaurent";
 import Offers from "./Offers";
 
 const Body = () => {
@@ -17,40 +14,40 @@ const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
-  useEffect(() => {
-    getRestaurants();
-  }, []);
+  // useEffect(() => {
+  //   getRestaurants();
+  // }, []);
 
-  const getRestaurants = async () => {
-    try {
-      const data = await fetch(SWIGGY_API_URL);
-      const json = await data.json();
-      // Optional Chaining ?
-      console.log( json?.data);
-      setAllRestaurants(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-      setFilteredRestaurants(
-        json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
-    } catch (error) {
-      console.log(error, "error while getting the restaurants");
-    }
-  };
+  // const getRestaurants = async () => {
+  //   try {
+  //     const data = await fetch(SWIGGY_API_URL);
+  //     const json = await data.json();
+  //     // Optional Chaining ?
+  //     console.log( json?.data);
+  //     setAllRestaurants(
+  //       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants
+  //     );
+  //     setFilteredRestaurants(
+  //       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants ||   json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+  //         ?.restaurants
+  //     );
+  //   } catch (error) {
+  //     console.log(error, "error while getting the restaurants");
+  //   }
+  // };
 
- // console.log(searchInput);
-  console.log(allRestaurants, filteredRestaurants);
+  // console.log(searchInput);
+  // console.log(allRestaurants, filteredRestaurants);
 
-  // if (filteredRestaurants==undefined || filteredRestaurants?.length === 0)
-  // return <h1>No Restaurant match your filter!!!</h1>;
   const isOnline = useOnline();
   if (!isOnline) {
     return <h1>Hey,You are offline</h1>;
   }
+  const filteredRestaurent = Restaurents.filter((restaurant) => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()))
+  console.log(filteredRestaurent)
   return (
     <>
       <div className="flex w-11/12 justify-center max-w-screen-xl mx-auto mt-5 mb-2">
@@ -76,26 +73,61 @@ const Body = () => {
 
         </div>
       </div>
-      {filteredRestaurants === undefined ||
-        filteredRestaurants?.length === 0 ? (
-        <Shimmer />
-      ) : (
-        <div className="flex  flex-wrap justify-center gap-2  mx-auto  my-10 items-start max-w-screen-xl">
-          {filteredRestaurants.map((restaurant) => {
-            return (
-              <Link
-                className="restaurent-link"
-                to={`restaurent/${restaurant?.info?.id}`}
-                key={restaurant?.info?.id}
-              >
-                <RestaurentCard {...restaurant?.info} />
-              </Link>
-            );
-          })}
-        </div>
-      )}
+      {
+
+        (
+          <div className="flex  flex-wrap justify-center gap-2  mx-auto  my-10 items-start max-w-screen-xl">
+            {
+              // filteredRestaurants.
+              filteredRestaurent.map((restaurant) => {
+                return (
+                  <Link
+                    className="restaurent-link"
+                    to={`restaurent/${restaurant?.id}`}
+                    key={restaurant?.id}
+                  >
+                    <RestaurentCard {...restaurant} />
+                  </Link>
+                );
+              })}
+            {
+              // filteredRestaurants.
+              filteredRestaurent.reverse().map((restaurant) => {
+                return (
+                  <Link
+                    className="restaurent-link"
+                    to={`restaurent/${restaurant?.id}`}
+                    key={restaurant?.id}
+                  >
+                    <RestaurentCard {...restaurant} />
+                  </Link>
+                );
+              })}
+            {
+              // filteredRestaurants.
+              filteredRestaurent.reverse().map((restaurant) => {
+                return (
+                  <Link
+                    className="restaurent-link"
+                    to={`restaurent/${restaurant?.id}`}
+                    key={restaurant?.id}
+                  >
+                    <RestaurentCard {...restaurant} />
+                  </Link>
+                );
+              })}
+          </div>
+        )
+      }
     </>
   );
 };
 
 export default Body;
+
+{/* {filteredRestaurants === undefined ||
+        filteredRestaurants?.length === 0 ? 
+        (
+        <Shimmer />
+      ) 
+      :  */}

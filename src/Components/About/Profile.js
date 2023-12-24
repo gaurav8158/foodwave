@@ -34,7 +34,7 @@ class Profile extends React.Component {
   render() {
     console.log("second child render called");
     return (
-      <div className="font-serif px-3 rounded-md bg-blue-200  drop-shadow-2xl shadow-2xl shadow-black mb-2 pt-2 text-center">
+      <div className="font-serif px-3 rounded-md bg-slate-100 max-w-[400px]  drop-shadow-2xl shadow-2xl shadow-black mb-2 pt-2 text-center">
         <div className="max-w-sm mt-2 w-1/3 m-auto overflow-hidden rounded-lg mb-2">
           <img className="overflow-hidden w-full rounded-full" src={this.state.userInfo.avatar_url} />
         </div>
@@ -42,13 +42,13 @@ class Profile extends React.Component {
         <p className="text-xl font-bold text-slate-800">{this.state.userInfo?.name}</p>
         <p className="font-serif text-slate-600 text-sm mb-2">{this.state.userInfo?.bio}</p>
         <div className="flex justify-center mb-2 gap-2">
-         <div className="p-2  rounded-full transition-all bg-pink-500 hover:bg-pink-700"> <Link to="https://twitter.com/Gauravs14241133"><FaTwitter className="text-blue-600 m-1 hover:scale-110" /></Link>
+         <div className="p-2  rounded-full transition-all bg-yellow-300 hover:bg-yellow-400"> <Link to="https://twitter.com/Gauravs14241133"><FaTwitter className="text-blue-600 m-1 hover:scale-110" /></Link>
           </div>
-          <div className="p-2  rounded-full bg-white hover:bg-zinc-500 ">
+          <div className="p-2  rounded-full bg-yellow-300 hover:bg-yellow-400">
           <Link to="https://github.com/gaurav8158"><FaGithub className="m-1 hover:scale-110" /></Link>
         
           </div>
-          <div className="p-2  rounded-full bg-pink-500 hover:bg-pink-700">
+          <div className="p-2 rounded-full bg-yellow-300 hover:bg-yellow-400">
           <Link to="https://www.linkedin.com/in/gauravsonis/"><FaLinkedin className="text-blue-600 m-1 hover:scale-110" /></Link>
        
           </div>

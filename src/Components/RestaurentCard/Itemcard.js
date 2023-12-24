@@ -29,39 +29,36 @@ const Itemcard = ({ item }) => {
     setCartCount((cartCount) => cartCount - 1)
    }
   }
-  //console.log(item.price);
+
   return (
     <div key={item.id} className="flex justify-between my-2 py-10 px-2 shadow-md 
     ">
       <div className="flex flex-col w-1/2 sm:w-3/4 justify-between">
        <div>
-       <p className="font-bold">{item.name}</p>
+       <p className="font-bold font-sans">{item.name}</p>
         </div> 
         {item.price==undefined ?
-        <p className="text-sm font-bold">Rs. 100.00</p>
-        : <p className="text-sm font-bold">Rs. {`${item.price / 100}.00`}</p>
+        <p className="text-sm font-bold font-sans">Rs. 100.00</p>
+        : <p className="text-sm font-bold font-sans">Rs. {`${item.price / 100}.00`}</p>
         }
 
-        <p className="text-gray-400 text-xs">{item.description}</p>
+        <p className="text-gray-400 text-xs font-sans">{item.description}</p>
         
       </div>
       <div className=" flex flex-col justify-center items-center relative">
-        <img className="w-[100px] rounded-xl shadow-xl relative " alt="item" src={`${IMG_CDN_URL}${item.imageId}`} />
+        <img className="w-[100px] rounded-xl shadow-xl relative " alt="item" src={item.image} />
         {cartCount > 0 ?
           (
-            <div className="bg-white text-xs shadow-xl shadow-black p-1 px-3 rounded-md top-12">
-              <button onClick={() => handleDecrement(item)} >-</button>
-              <span className="text-green-600 mr-2 ml-2">{cartCount}</span>
-              <button onClick={() => handleincrement(item)} >+</button>
+            <div className="bg-white text-xs shadow-xl shadow-black rounded-md top-12">
+              <button className="px-3 py-2" onClick={() => handleDecrement(item)} >-</button>
+              <span className="text-green-600 mr-2 ml-2 font-semibold">{cartCount}</span>
+              <button className="px-3 py-2" onClick={() => handleincrement(item)} >+</button>
             </div>
           )
-          : (<button onClick={() => handleincrement(item)} className="bg-white shadow-xl shadow-black text-green-500 text-xs py-1 px-4 rounded-md  top-12">Add</button>)}
+          : (<button onClick={() => handleincrement(item)} className="text-white shadow-xl shadow-black bg-green-600 text-xs px-6 py-2 rounded-md  top-12 font-bold">Add</button>)}
 
       </div>
     </div>
   );
 };
 export default Itemcard;
-
-
-// flex-col sm:flex-row

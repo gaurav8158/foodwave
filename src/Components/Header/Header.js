@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin, setLogout } from "../../Redux/userSlice";
+import useOnline from "../useOnline";
 
 const Header = () => {
   const [user, setUser] = useState(null)
@@ -16,6 +17,7 @@ const Header = () => {
   console.log(item, "items")
   console.log(isLogin, currUser)
   const[sum,setSum]=useState(0);
+  const isOnline = useOnline();
   useEffect(()=>{
     const sum = item.reduce((accumulator, currentValue) => accumulator + currentValue.count, 0);
   setSum(sum);
@@ -35,21 +37,28 @@ const Header = () => {
   const handleLogout = () => {
     dispatch(setLogout())
   }
+  console.log(isOnline);
   return (
 
-    <div className="font-medium text-xl " >
+    <div className="font-medium " >
       <div className="md:flex md:justify-between md:items-center shadow py-2 px-4">
         <div className="flex justify-between items-center">
           <Link to="/">
             <div>
+         
               <img src={logo} className="w-14" />
             </div>
           </Link>
           <span className="cursor-pointer md:hidden block mx-2 text-3xl">
-            {menu ? <FaAlignJustify onClick={() => setMenu(false)} /> : <FaArrowsAlt onClick={() => setMenu(true)} />}
+            {menu ? 
+            <i class="fi fi-br-menu-burger" onClick={() => setMenu(false)}></i>
+          :
+         
+             <i onClick={() => setMenu(true)}  class="fi fi-br-cross-small"></i>
+             }
           </span>
         </div>
-
+       
         <ul className={`text-slate-500 text-base md:flex md:items-center z-[1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all  ease-in-out duration-500 ${!menu ? "top-[80px] opacity-100 " : ""}`} >
           <li>
             <Link to="/" className=" flex items-center gap-1 hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0"  >
@@ -61,7 +70,7 @@ const Header = () => {
           <li>  <Link to="/contact" className="flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0">
             Contact
           </Link></li>
-          <li> <Link to="/instamart" className="flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0">
+          <li> <Link to="/instamart" className="flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0 ">
             Instamart
           </Link></li>
 
@@ -70,7 +79,9 @@ const Header = () => {
               <span onClick={handleLogout}>{user.name}</span>
             </div>) : (<Link to="/signin" className="flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500">  <span>Login</span> </Link>)}
           </li>
-          <li>  <Link to="/cart" className="relative flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0"  >
+          {isOnline ?
+          <li><div className={`w-2 h-2 rounded-lg ${isOnline ? "bg-lime-500":"bg-slate-300"}`} ></div></li>:""
+          }<li>  <Link to="/cart" className="relative flex items-center gap-1  hover:bg-violet-600 hover:text-white px-2 py-1 rounded-md duration-500 m-2 ml-0"  >
             <FaCartArrowDown />
             {sum > 0 && <span className="text-white bg-green-600 rounded-2xl font-bold text-sm py-1 px-2   right-2 -top-2.5">{sum}</span>}
           </Link></li>

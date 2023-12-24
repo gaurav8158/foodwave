@@ -5,16 +5,15 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div>
-      <div className='bg-slate-300 mt-10  p-5 '>
+      <div className='bg-slate-300 p-5 '>
         <div className='flex flex-wrap justify-center gap-10' >
         <span className='flex flex-col justify-center items-center text-3xl font-semibold '>For better experience,
           <hr/>
           download the Swiggy app now</span> 
          <div className='flex justify-center items-center flex-wrap'>
-        <img className="w-28" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png"/>
-       <img className="ml-2 w-28" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png"/>
-        </div>
-         
+        <img className="w-28  cursor-pointer transition-transform transform hover:scale-110 " src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/play_store.png"/>
+       <img className="ml-2 w-28 transition-transform transform hover:scale-110 cursor-pointer" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/app_store.png"/>
+        </div>      
         </div>
       </div>
  <div  className='footer-content bg-black text-slate-500 p-10 pb-20'>
