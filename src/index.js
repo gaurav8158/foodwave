@@ -17,68 +17,67 @@ import Profile from './Components/About/Profile';
 import Cart from './Components/Cart/Cart';
 import Checkout from './Components/Cart/Checkout';
 import "./index.css";
-const Instamart=lazy(()=>import("./Components/Instamart/Instamart"))
+const Instamart = lazy(() => import("./Components/Instamart/Instamart"))
 const appRouter = createBrowserRouter([
-  
   {
-    path:'/',
-    element:<App />,
-    children:[
+    path: '/',
+    element: <App />,
+    children: [
       {
-        path:'/about',
-        element:<About/>,
-        children:[{
-          path:"profile",
-          element:<Profile/>
+        path: '/about',
+        element: <About />,
+        children: [{
+          path: "profile",
+          element: <Profile />
         }]
-        },
-      {
-        path:'/',
-        element:<Body />,
-        errorElement:<Error/>
       },
-    {
-      path:'/contact',
-      element:<Contact />
-    },
-    {
-      path:'/signup',
-      element:<Signup />
-    },
-    {
-      path:'/signin',
-      element:<Login />
-    },
-    {
-      path:'/cart',
-      element:<Cart/>
-    },
-    {
-      path:'/restaurent/:resId',
-      element:<Restaurentcard />
-    },
-    {
-      path:"/instamart",
-      element:
-      <Suspense fallback={Shimmer}>
-        <Instamart/>
-      </Suspense>,
-    },  
-    {
-      path:"/checkout",
-      element:<Checkout/>
-    }  
+      {
+        path: '/',
+        element: <Body />,
+        errorElement: <Error />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
+      },
+      {
+        path: '/signin',
+        element: <Login />
+      },
+      {
+        path: '/cart',
+        element: <Cart />
+      },
+      {
+        path: '/restaurent/:resId',
+        element: <Restaurentcard />
+      },
+      {
+        path: "/instamart",
+        element:
+          <Suspense fallback={Shimmer}>
+            <Instamart />
+          </Suspense>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
+      }
     ]
-  },  
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>  
-    <RouterProvider router={appRouter}/>
+    <Provider store={store}>
+      <RouterProvider router={appRouter} />
     </Provider>
-  
+
   </React.StrictMode>
 );
 

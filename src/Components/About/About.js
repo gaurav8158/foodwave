@@ -8,7 +8,7 @@ const About = () => {
   const[click,setClick] = useState(false);
   console.log(useState());
   return (
-<div className="bg-slate-200 min-h-screen p-8 flex flex-col md:flex-row">
+<div className="bg-slate-50 min-h-screen p-8 flex flex-col md:flex-row">
 <div className="md:w-1/2  flex flex-col justify-center p-10">
 <h2 className="text-3xl font-bold mb-4 font-serif font-sans">About Us</h2>
 <p className="mb-4 font-serif font-medium  text-slate-950  font-sans">

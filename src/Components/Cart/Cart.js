@@ -36,7 +36,7 @@ const Cart = () => {
         dispatch(clearCart())
     }
     return (
-        <div>
+        <div className='mt-20 mb-10 bg-slate-100 min-h-screen'>
             {total != 0 && total ? <div className='flex flex-col md:flex-row m-auto max-w-screen-lg'>
 
                 <div className='w-full md:w-1/2 md:m-auto'>
@@ -46,8 +46,8 @@ const Cart = () => {
                 </div>
 
                 <div className='w-full md:w-1/3 '>
-                    <div className='my-5 p-5 bg-emerald-100 text-black font-semibold rounded-md'><span>Want to clear Cart..??</span><button className='ml-2 bg-rose-600 text-white p-2 rounded-lg' onClick={handleClear}>Clear cart</button></div>
-                    <div className='p-5 bg-emerald-100 rounded-md'>
+                    <div className='my-5 p-5 bg-orange-200 text-black font-semibold rounded-md'><span>Want to clear Cart..??</span><button className='ml-2 bg-rose-600 hover:bg-rose-700 text-white p-2 rounded-lg' onClick={handleClear}>Clear cart</button></div>
+                    <div className='p-5 bg-orange-200 rounded-md'>
                         <p className='text-xl font-bold'>Bill Details</p>
                         <div className='flex justify-between '><span>number of items: </span>{total}</div>
                         <div className='flex justify-between'><span>Item Total</span><span>₹ {sum}</span></div>
@@ -55,7 +55,7 @@ const Cart = () => {
                         <div className='mt-2 flex justify-between font-bold'><span>TO PAY</span> <span>₹ {sum} /-</span></div>
 
                     </div>
-                    <div onClick={handleCheck} className='bg-rose-600 mt-4 py-2 text-center font-extrabold rounded-lg text-white hover:bg-rose-700 cursor-pointer'>Checkout</div>
+                    <div onClick={handleCheck} className='bg-green-700 mt-4 py-2 text-center font-extrabold rounded-lg text-white hover:bg-green-800 cursor-pointer'>Checkout</div>
                 </div>
             </div> : <div className='py-2 px-10 bg-blue-100 text-red-700 font-sans font-bold text-7xl h-screen flex justify-self-start items-center'>Your Cart is empty please Add items in to cart...</div>}
         </div>

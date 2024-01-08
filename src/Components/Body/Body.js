@@ -49,8 +49,8 @@ const Body = () => {
   const filteredRestaurent = Restaurents.filter((restaurant) => restaurant.name.toLowerCase().includes(searchInput.toLowerCase()))
   //console.log(filteredRestaurent)
   return (
-    <>
-      <div className="flex w-11/12 justify-center max-w-screen-xl mx-auto mt-5 mb-2">
+    <div className="mt-16 pt-5 bg-slate-100">
+      <div className="flex w-11/12 justify-center max-w-screen-xl mx-auto mb-2 ">
         <Offers />
       </div>
       <div className="flex w-11/12 justify-center max-w-screen-xl mx-auto mb-5">
@@ -64,8 +64,8 @@ const Body = () => {
             <FaSearch className="text-gray-400" />
           </div>
           <input
-            placeholder="Search..."
-            className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white text-gray-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            placeholder="Search Restaurent..."
+            className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-slate-50 text-gray-900 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
             type="text"
@@ -119,7 +119,7 @@ const Body = () => {
           </div>
         )
       }
-    </>
+    </div>
   );
 };
 

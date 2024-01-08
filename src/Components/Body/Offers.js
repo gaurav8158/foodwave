@@ -45,25 +45,25 @@ const Offers = () => {
         },
       },
     ],
-  
+
   };
 
 
   return (
     <div className="w-full m-auto">
       <div className='flex justify-end'>
-        <div className='bg-slate-300 text-zinc-700 rounded-xl p-2 cursor-pointer hover:bg-slate-400'>
+        <div className='bg-slate-200 text-slate-500 rounded-2xl p-2 cursor-pointer hover:bg-slate-300 transition-all'>
           <FaAngleLeft onClick={previous} />
         </div>
-        <div className='bg-slate-300 text-zinc-700 rounded-xl p-2 ml-1 cursor-pointer  hover:bg-slate-400'>
+        <div className='bg-slate-200 text-slate-500 rounded-2xl p-2 ml-1 cursor-pointer  hover:bg-slate-300 transition-all'>
           <FaAngleRight onClick={next} />
         </div>
 
 
       </div>
       <Slider ref={sliderRef}
-      
-      {...settings}>
+
+        {...settings}>
 
         {imgArr.map((data) => {
           return (<div key={data} className='p-2'><img src={data} alt="img" /></div>)

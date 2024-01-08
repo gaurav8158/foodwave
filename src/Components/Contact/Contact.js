@@ -4,7 +4,7 @@ import "./Contact.css"
 import contact from "../../Assets/business.png"
 const Contact = () => {
   return (
-    <div className="bg-slate-200 min-h-screen flex flex-col md:flex-row h-full">
+    <div className="bg-slate-50 min-h-screen flex flex-col md:flex-row h-full mt-10">
       <div className="md:w-1/2  flex flex-col justify-center p-10">
         <h2 className="text-3xl font-bold mb-4 font-serif">Contact Us</h2>
         <h3></h3>

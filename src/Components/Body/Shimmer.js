@@ -16,7 +16,7 @@ const Shimmer = () => {
   }, []);
   return (
     <div className=' mx-20 mt-4'>
-        <ShimmerSimpleGallery col={windowWidth>700 ? 4  : 2} row={5} card imageHeight={200} caption />
+      <ShimmerSimpleGallery col={windowWidth > 700 ? 4 : 2} row={5} card imageHeight={200} caption />
     </div>
   )
 }

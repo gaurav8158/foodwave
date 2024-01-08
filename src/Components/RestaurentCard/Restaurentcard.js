@@ -48,7 +48,7 @@ const Restaurentcard = () => {
   const RestaurentList = Restaurentss[0].items.slice(firstIndex, lastIndex);
 
   return (
-    <div className="flex flex-col  justify-center items-center">
+    <div className="flex flex-col  justify-center items-center mt-16">
       <div className="bg-black  w-full py-7">
         <div className="flex flex-col md:flex-row max-w-2xl m-auto justify-between items-center p-2">
           <img className="w-11/12 md:w-3/12 rounded-xl" alt="item" src={Restaurentss[0].image} />

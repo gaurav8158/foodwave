@@ -31,7 +31,7 @@ const Itemcard = ({ item }) => {
   }
 
   return (
-    <div key={item.id} className="flex justify-between py-8 px-4 shadow-md 
+    <div key={item.id} className="flex justify-between py-8 px-4 shadow-md  
     ">
       <div className="flex flex-col w-1/2 sm:w-3/4 justify-between">
         <div>
